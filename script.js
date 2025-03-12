@@ -29,8 +29,12 @@ function createBoxes(numOfBoxes = 16) {
         let box = document.createElement("div");
         box.style.outline = "1px solid black";
         box.style.width = dimensions;
+        box.style.opacity = "0.1";
         box.addEventListener("mouseenter", () => {
             box.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+            if (box.style.opacity !== "1") {
+                box.style.opacity = Number(box.style.opacity) + 0.1;
+            }
         })
         container.appendChild(box);
     }
