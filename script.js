@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 document.querySelector(".square-button").addEventListener("click", howManyBoxes);
+document.querySelector(".reset-button").addEventListener("click", removeBoxes);
 createBoxes();
 
 function howManyBoxes() {
@@ -30,6 +31,7 @@ function createBoxes(numOfBoxes = 16) {
         box.style.outline = "1px solid black";
         box.style.width = dimensions;
         box.style.opacity = "0.1";
+        
         box.addEventListener("mouseenter", () => {
             box.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
             if (box.style.opacity !== "1") {
